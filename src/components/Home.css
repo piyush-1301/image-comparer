@@ -1,0 +1,33 @@
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    background: #e0eafc,
+}
+@media (max-width: 1200px) {
+    .rows{
+    flex-direction: column;
+    }
+    .secondDragArea{
+        flex-direction: column-reverse;
+    }
+
+  }
+
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    height: 150px;
+    font-weight: 400;
+    background: #cadeef;
+    padding: 0 20px;
+}
+
+.secondDragArea{
+    display: flex;
+    align-items: center;
+}

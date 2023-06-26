@@ -1,0 +1,19 @@
+.bar{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background: #212529;
+    border-top: 4px solid #1E90FF;
+    z-index:1;
+}
+
+.heading{
+    padding: 0 20px;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
