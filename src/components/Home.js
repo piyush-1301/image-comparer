@@ -41,7 +41,8 @@ function Home() {
 
 //If you want to go on home page instead of true type post in if(post) 
   if (true) {
-    return <ResultPage />;
+    // return <ResultPage  image={post.diff_image_base64} percentage={post.percentage_diff} result={post.result} image1= {image1} image2= {image2} image1Details={post.image1Details} image2Details={post.image2Details}/>;
+    return <ResultPage/>
   }
   return (
     <div>
