@@ -20,7 +20,7 @@ function Home() {
       formData.append('screenshot1',image1);
       formData.append('screenshot2',image2);
       axios
-        .post("https://192.168.156.224:8080/image", formData)
+        .post("http://127.0.0.1:5000/compare", formData)
         .then((res) => {
           setPost(res.data);
         })
@@ -41,11 +41,11 @@ function Home() {
 
 //If you want to go on home page instead of true type post in if(post) 
   if (true) {
-    // return <ResultPage  image={post.diff_image_base64} percentage={post.percentage_diff} result={post.result} image1= {image1} image2= {image2} image1Details={post.image1Details} image2Details={post.image2Details}/>;
     return <ResultPage/>
+    // return <ResultPage  image={post.diff_image_base64} sec_image={post.sec_diff_image_base64} percentage={post.similarity} image1= {image1} image2= {image2} image1Details={post.image1_details} image2Details={post.image2_details}/>;
   }
   return (
-    <div>
+    <div className="fullHome">
       <div className="description">
         <Fade left>
           <div>
@@ -60,10 +60,9 @@ function Home() {
           </div>
         </Fade>
       </div>
-      <div className="rows">
+      <div className="home">
         <Fade bottom>
           <DragArea image={image1}  setImage = {setImage1}/>
-          <div>
             <div className="secondDragArea">
               <Button
                 variant="contained"
@@ -74,13 +73,13 @@ function Home() {
               </Button>
               <DragArea image={image2}  setImage = {setImage2} />
             </div>
-
-            <Button variant="outlined" color="error" onClick={handleReset}>
-              Reset
-            </Button>
-          </div>
         </Fade>
       </div>
+      <div style={{'margin-bottom':'30px'}}>
+      <Button variant="outlined" color="error" onClick={handleReset}>
+              Reset
+            </Button>
+            </div>
     </div>
   );
 }
