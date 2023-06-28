@@ -2,9 +2,9 @@ import React, { useRef, useState } from "react";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import "./DragArea.css";
 
-function DragArea({getImageData}) {
+function DragArea({image, setImage}) {
   const inputref = useRef(null);
-  const [image, setImage] = useState("");
+  // const [image, setImage] = useState("");
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -18,7 +18,6 @@ function DragArea({getImageData}) {
     else if(file){
     console.log(file);
     setImage(file);
-    getImageData(file);
     }
   };
 
@@ -33,7 +32,6 @@ function DragArea({getImageData}) {
     else if(file){
     console.log(file);
     setImage(file);
-    getImageData(file);
     }
   };
 
