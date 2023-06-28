@@ -42,14 +42,13 @@ function Home() {
 //If you want to go on home page instead of true type post in if(post) 
   if (post) {
     return (<div style={{'display':'flex', 'flex-direction':'column' , 'align-items':'center'}}>
-    <ResultPage/>
+    <ResultPage  image={post.diff_image_base64} sec_image={post.sec_diff_image_base64} percentage={post.similarity} image1= {image1} image2= {image2} image1Details={post.image1_details} image2Details={post.image2_details}/>
     <div style={{'margin-bottom':'30px'}}>
     <Button variant="outlined" color="error" onClick={handleReset}>
               Reset
             </Button>
     </div>
     </div>)
-    // return <ResultPage  image={post.diff_image_base64} sec_image={post.sec_diff_image_base64} percentage={post.similarity} image1= {image1} image2= {image2} image1Details={post.image1_details} image2Details={post.image2_details}/>;
   }
   return (
     <div className="fullHome">
